@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,55 +78,7 @@
       depthWrite: false,
       vertexColors: THREE.FaceColors
     });
-
-
-ThreeJS White Rotating Skull
-
-
-necrodao@gmail.com
-Can you code a threejs animation of a white rotating skull made of particles on a black background. 700px x 1000x
-
-Sure! Here is an example of how you can create a three.js animation of a white rotating skull made of particles on a black background:
-
-Copy code
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>White Rotating Skull</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: black;
-    }
-    canvas {
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.117.1/build/three.min.js"></script>
-  <script>
-    // Set up the scene, camera, and renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, 700 / 1000, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(700, 1000);
-    document.body.appendChild(renderer.domElement);
-
-    // Create the skull geometry
-    const skullGeometry = new THREE.IcosahedronGeometry(100, 1);
-
-    // Create the skull material
-    const skullMaterial = new THREE.PointsMaterial({
-      size: 5,
-      color: 0xffffff,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-      vertexColors: THREE.FaceColors
-    });
-
+ 
     // Color the skull faces white
     for (let i = 0; i < skullGeometry.faces.length; i++) {
       skullGeometry.faces[i].color.setHex(0xffffff);
